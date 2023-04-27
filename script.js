@@ -52,24 +52,24 @@ function hollidaySegar(peso){
         return flujo;
 }
 function mostrarResultado (flujo, peso){
-    
+    var metodo = peso<=30 ? 'Método "Holliday-segar"' : 'Método "Sup. Corporal"';  
     if(peso > 30){
-        var metodo = peso<=30 ? "Holliday-segar" : "Superficie Corporal"
-        var valorMilquiniento = flujo *1500
-        var valorDosMil = flujo *2000
         
-        var parte1 = `m+m/2 ${Math.round(1.5 * valorMilquiniento/24, 1)} cc/hr <br> ${metodo} * 1500 `
-        FLU.innerHTML = `${Math.round(valorMilquiniento, 1)} cc <br>${Math.round( valorMilquiniento/24, 1)} cc/hr <br> ${parte1}`
+        var valorMilquiniento = flujo *1500;
+        var valorDosMil = flujo *2000;
+        
+        var parte1 = `m+m/2 ${Math.round(1.5 * valorMilquiniento/24, 1)} cc/hr <br> ${metodo}   * 1500 `;
+        FLU.innerHTML = `${Math.round(valorMilquiniento, 1)} cc <br>${Math.round( valorMilquiniento/24, 1)} cc/hr <br> ${parte1}`;
 
-        var parte2 = `m+m/2 ${Math.round(1.5 * valorDosMil/24, 1)} cc/hr <br> ${metodo} * 2000`
-        MAN.innerHTML = `${Math.round(valorDosMil, 1)} cc <br>${Math.round( valorDosMil/24, 1)} cc/hr <br> ${parte2}`
+        var parte2 = `m+m/2 ${Math.round(1.5 * valorDosMil/24, 1)} cc/hr <br> ${metodo}   * 2000`;
+        MAN.innerHTML = `${Math.round(valorDosMil, 1)} cc <br>${Math.round( valorDosMil/24, 1)} cc/hr <br> ${parte2}`;
 
     }
     else{
-        FLU.innerHTML = `${Math.round(flujo, 1)} cc <br>${Math.round( flujo/24, 1)} cc/hr`
-        MAN.innerHTML = `m+m/2 ${Math.round(1.5 * flujo/24, 1)} cc/hr <br> ${metodo} ${valorCorporalNumero}`
-
+        FLU.innerHTML = `${Math.round(flujo, 1)} cc <br>${Math.round( flujo/24, 1)} cc/hr`;
+        MAN.innerHTML = `m+m/2 ${Math.round(1.5 * flujo/24, 1)} cc/hr <br> ${metodo}`;
     }
     FLU.style.display = "Block";
     MAN.style.display = "Block";
+    
 }
